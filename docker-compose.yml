@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  databse:
-    image: postgres:latest
+  db:
+    image: postgres:15
     ports:
       - "5433:5432"
     environment:
@@ -11,8 +11,8 @@ services:
       POSTGRES_PASSWORD: taskpasswd123
   
   cli-app:
-    build: ./src
+    build: app
     depends_on:
-      - databse
+      - db
     environment:
       - DATABASE_URL=postgres://taskuser:taskpasswd123@database:5432/mydatabase
