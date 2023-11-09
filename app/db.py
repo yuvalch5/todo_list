@@ -2,8 +2,9 @@ import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.orm import sessionmaker, declarative_base
+from app.settings import DATABASE_URL
 
-engine = create_engine('postgres://taskuser:taskpasswd123@database:5432/mydatabase')
+engine = create_engine(DATABASE_URL)
 metadata = sqlalchemy.MetaData
 Session = sessionmaker(bind=engine)
 session = Session()

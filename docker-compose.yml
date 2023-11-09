@@ -14,5 +14,5 @@ services:
     build: app
     depends_on:
       - db
-    environment:
-      - DATABASE_URL=postgres://taskuser:taskpasswd123@database:5432/mydatabase
+    env_file:
+      - .env.docker

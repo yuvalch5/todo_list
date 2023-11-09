@@ -1,5 +1,5 @@
 import typer
-from app.sqlite_manage import TasksNew, session
+from app.db import TasksNew, session
 from datetime import datetime
 from sqlalchemy import and_
 from tabulate import tabulate
